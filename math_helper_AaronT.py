@@ -23,7 +23,22 @@ def slope(y1,y2,x1,x2):
         b = b * -1
     print(f"{a}/{b}")
 
-#def pointslope(y1,x1,m):
+def distance(x1,x2,y1,y2):
+    '''
+        gets the distance from two points
+        
+        >>> distance(2,9,3,7)
+        8.06
+        >>> distance(0,0,0,0)
+        0.0
+        >>> distance(-2,2,3,-5)
+        8.94
+        
+    '''
+        
+    dist = sqrt((x2-x1)**2+(y2-y1)**2)
+    dist = round(dist,2)
+    print(dist)
     
     
     
