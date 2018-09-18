@@ -9,17 +9,22 @@ def slope(y1,y2,x1,x2):
         
         >>> slope(7,2,2,9)
         -5/7
-        >>> slope(7,8,3,5)
-        1/2
-        >>> slope(1,3,9,2)
-        2/-7
+        >>> slope(7,-8,3,-5)
+        15/8
+        >>> slope(0,0,0,0)
+        0/0
             
     
     '''
     a = y2-y1
     b = x2 -x1
-    
+    if a < 0 and b < 0:
+        a = a * -1
+        b = b * -1
     print(f"{a}/{b}")
+
+#def pointslope(y1,x1,m):
+    
     
     
 
