@@ -35,10 +35,33 @@ def distance(x1,x2,y1,y2):
         8.94
         
     '''
+    
         
     dist = sqrt((x2-x1)**2+(y2-y1)**2)
     dist = round(dist,2)
     print(dist)
+    
+def midpoint(x1,x2,y1,y2):
+    '''
+        It gets x coordinates and adds them and divides them by 2
+        then gets the y coordinates and adds them and divides it by 2 and prints the midpoint
+        
+        
+        >>> midpoint(7,15,22,2)
+        11.0,12.0
+        
+        >>> midpoint(0,0,0,0)
+        0.0,0.0
+        
+        >>> midpoint(-3,-42,-9,23)
+        22.5,14.0
+        
+    '''
+    a = (x1 + x2)/2
+    b = (y1 + y2)/2
+    print(f'{a},{b}')
+    
+    
     
     
     
