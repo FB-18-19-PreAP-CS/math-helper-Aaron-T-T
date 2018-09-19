@@ -54,13 +54,34 @@ def midpoint(x1,x2,y1,y2):
         0.0,0.0
         
         >>> midpoint(-3,-42,-9,23)
-        22.5,14.0
+        -22.5,7.0
         
     '''
     a = (x1 + x2)/2
     b = (y1 + y2)/2
     print(f'{a},{b}')
+
+def sphere(r):
+    '''
+        gives the volume and surface area of a sphere
+    >>> sphere(2)
+    33.51
+    50.27
+    >>> sphere(3)
+    113.1
+    113.1
+    >>> sphere(0)
+    0.0
+    0.0
+    '''
+    a = 4/3*pi
+    v = a*(r**3)
+    v = round(v,2)
     
+    sa = 4*pi*r**2
+    sa = round(sa,2)
+    print(f'{v}')
+    print(f'{sa}')
     
     
     
