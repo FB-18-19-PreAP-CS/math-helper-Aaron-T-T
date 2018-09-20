@@ -1,10 +1,6 @@
 from math import *
 
 def slope(y1,y2,x1,x2):
-#    y1 = float(input("Give Y1: "))
-#    y2 = float(input("Give Y2: "))
-#    x1 = float(input("Give X1: "))
-#    x2 = float(input("Give X2: "))
     ''' Gets the inputs for the y1,y2,x1,and x2
         
         >>> slope(7,2,2,9)
@@ -22,6 +18,13 @@ def slope(y1,y2,x1,x2):
         a = a * -1
         b = b * -1
     print(f"{a}/{b}")
+def slopez():
+    y1 = int(input('Input Y1: '))
+    y2 = int(input('Input Y2: '))
+    x1 = int(input('Input X1: '))
+    x2 = int(input('Input X2: '))
+    slope(y1,y2,x1,x2)
+    
 
 def distance(x1,x2,y1,y2):
     '''
@@ -40,6 +43,17 @@ def distance(x1,x2,y1,y2):
     dist = sqrt((x2-x1)**2+(y2-y1)**2)
     dist = round(dist,2)
     print(dist)
+    
+    
+    
+def distancez():
+    y1 = int(input('Input Y1: '))
+    y2 = int(input('Input Y2: '))
+    x1 = int(input('Input X1: '))
+    x2 = int(input('Input X2: '))
+    distance(x1,x2,y1,y2)
+    
+    
     
 def midpoint(x1,x2,y1,y2):
     '''
@@ -60,6 +74,13 @@ def midpoint(x1,x2,y1,y2):
     a = (x1 + x2)/2
     b = (y1 + y2)/2
     print(f'{a},{b}')
+
+def midpointz():
+    y1 = int(input('Input Y1: '))
+    y2 = int(input('Input Y2: '))
+    x1 = int(input('Input X1: '))
+    x2 = int(input('Input X2: '))
+    midpoint(x1,x2,y1,y2)
 
 def sphere(r):
     '''
@@ -83,7 +104,31 @@ def sphere(r):
     print(f'{v}')
     print(f'{sa}')
     
+def spherez():
+    r = int(input('Input radius:'))
+    sphere(r)
     
+
+
+def main():
+    print('Slope    formula: 1')
+    print('Distance formula: 2')
+    print('Midpoint formula: 3')
+    print('Sphere   formula: 4')
+    a = str(input('pick which formula you want to use: '))
+    if a == '1':
+        slopez()
+    elif a == '2':
+        distancez()
+    elif a == '3':
+        midpointz()
+    elif a == '4':
+        spherez()
+        
+    else:
+        print('That is not a formula option')
+        
+          
     
     
 
@@ -91,8 +136,9 @@ def sphere(r):
 
 
 if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+    #import doctest
+    #doctest.testmod()
+    main()
     
     
     
