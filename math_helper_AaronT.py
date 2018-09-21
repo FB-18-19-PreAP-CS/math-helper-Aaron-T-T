@@ -1,5 +1,10 @@
 from math import *
 
+# You might want to consider having your functions
+# return values (instead of printing) to make it
+# easier for your user interface to display
+# the answers in a useful way
+
 def slope(y1,y2,x1,x2):
     ''' Gets the inputs for the y1,y2,x1,and x2
         
@@ -114,31 +119,32 @@ def spherez():
 
 
 def main():
-    print('Please pick the formula you would like to use')
-    print(' ')
-    print('Slope    formula: 1')
-    print('Distance formula: 2')
-    print('Midpoint formula: 3')
-    print('Sphere   formula: 4')
-    print('Quit: 0')
-    a = str(input('pick which formula you want to use: '))
-    if a == '1':
-        slopez()
-    elif a == '2':
-        distancez()
-    elif a == '3':
-        midpointz()
-    elif a == '4':
-        spherez()
-    elif a == '0':
-        print(a)
-        
-    
-    while a != '1' or a != '2' or a != '3' or a != '4':
-        print('That is not a formula option')
+    while True:
+        print('Please pick the formula you would like to use')
         print(' ')
-        print(' ')
-        main()
+        print('Slope    formula: 1')
+        print('Distance formula: 2')
+        print('Midpoint formula: 3')
+        print('Sphere   formula: 4')
+        print('Quit: 0')
+        a = str(input('pick which formula you want to use: '))
+        if a == '1':
+            slopez()
+        elif a == '2':
+            distancez()
+        elif a == '3':
+            midpointz()
+        elif a == '4':
+            spherez()
+        elif a == '0':
+            print(a)
+            # Maybe add a goodbye message?
+            break
+        else:
+            print('That is not a formula option')
+            print(' ')
+            print(' ')
+
     
           
     
