@@ -81,7 +81,7 @@ def midpointz():
     x1 = int(input('Input X1: '))
     x2 = int(input('Input X2: '))
     midpoint(x1,x2,y1,y2)
-
+    
 def sphere(r):
     '''
         gives the volume and surface area of a sphere
@@ -95,6 +95,8 @@ def sphere(r):
     0.0
     0.0
     '''
+    if r+1 == r: #catches a value like 1e100
+        raise OverflowError("n is too large")
     a = 4/3*pi
     v = a*(r**3)
     v = round(v,2)
@@ -105,16 +107,20 @@ def sphere(r):
     print(f'{sa}')
     
 def spherez():
-    r = int(input('Input radius:'))
+    r = int(input('Input radius: '))
+    
     sphere(r)
     
 
 
 def main():
+    print('Please pick the formula you would like to use')
+    print(' ')
     print('Slope    formula: 1')
     print('Distance formula: 2')
     print('Midpoint formula: 3')
     print('Sphere   formula: 4')
+    print('Quit: 0')
     a = str(input('pick which formula you want to use: '))
     if a == '1':
         slopez()
@@ -124,10 +130,16 @@ def main():
         midpointz()
     elif a == '4':
         spherez()
+    elif a == '0':
+        print(a)
         
-    else:
+    
+    while a != '1' or a != '2' or a != '3' or a != '4':
         print('That is not a formula option')
-        
+        print(' ')
+        print(' ')
+        main()
+    
           
     
     
