@@ -14,6 +14,10 @@ def slope(y1,y2,x1,x2):
         15/8
         >>> slope(0,0,0,0)
         0/0
+        >>> slope(2,2,2,2)
+        0/0
+        >>> slope(6,3,4,7)
+        -3/3
             
     
     '''
@@ -22,7 +26,7 @@ def slope(y1,y2,x1,x2):
     if a < 0 and b < 0:
         a = a * -1
         b = b * -1
-    print(f"{a}/{b}")
+    print(f'{a}/{b}') 
 def slopez():
     y1 = int(input('Input Y1: '))
     y2 = int(input('Input Y2: '))
@@ -41,6 +45,10 @@ def distance(x1,x2,y1,y2):
         0.0
         >>> distance(-2,2,3,-5)
         8.94
+        >>> distance(2,3,10,-4)
+        14.04
+        >>> distance(5,-6,2,0)
+        11.18
         
     '''
     
@@ -74,6 +82,10 @@ def midpoint(x1,x2,y1,y2):
         
         >>> midpoint(-3,-42,-9,23)
         -22.5,7.0
+        >>> midpoint(2,10,-2,5)
+        6.0,1.5
+        >>> midpoint(5,2,-10,24)
+        3.5,7.0
         
     '''
     a = (x1 + x2)/2
@@ -99,17 +111,24 @@ def sphere(r):
     >>> sphere(0)
     0.0
     0.0
+    
+    >>> sphere(4)
+    268.08
+    201.06
+    >>> sphere(5)
+    523.6
+    314.16
+    
     '''
-    if r+1 == r: #catches a value like 1e100
-        raise OverflowError("n is too large")
     a = 4/3*pi
     v = a*(r**3)
     v = round(v,2)
     
     sa = 4*pi*r**2
     sa = round(sa,2)
-    print(f'{v}')
-    print(f'{sa}')
+    print(v)
+    print(sa)
+    
     
 def spherez():
     r = int(input('Input radius: '))
@@ -120,6 +139,7 @@ def spherez():
 
 def main():
     while True:
+        print(' ')
         print('Please pick the formula you would like to use')
         print(' ')
         print('Slope    formula: 1')
@@ -137,13 +157,13 @@ def main():
         elif a == '4':
             spherez()
         elif a == '0':
-            print(a)
-            # Maybe add a goodbye message?
+            print('Ok thank you goodbye')
             break
         else:
             print('That is not a formula option')
             print(' ')
             print(' ')
+    pass 
 
     
           
@@ -154,9 +174,9 @@ def main():
 
 
 if __name__ == "__main__":
-    #import doctest
-    #doctest.testmod()
-    main()
+    import doctest
+    doctest.testmod()
+    #main()
     
     
     
