@@ -135,8 +135,27 @@ def spherez():
     
     sphere(r)
     
-
-
+def quadratic(a,b,c):
+    '''
+        It returns two values involving the quadtratic equation
+        
+        >>> quadratic(4,11,-20)
+        -4.0
+        1.25
+        
+        >>> quadratic(4,8,-1)
+        0.0
+        0.0
+    '''
+    d = sqrt(b**2-4*a*c)
+    e = 2*a
+    f = -1 * b
+    x1 = (f - d)/e
+    x2 = (f + d)/e
+    x1 = round(x1,2)
+    x2 = round(x2,2)
+    print(x1)
+    print(x2)
 def main():
     while True:
         print(' ')
