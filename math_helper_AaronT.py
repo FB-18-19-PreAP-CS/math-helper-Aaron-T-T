@@ -75,22 +75,22 @@ def midpoint(x1,x2,y1,y2):
         
         
         >>> midpoint(7,15,22,2)
-        11.0,12.0
+        (11.0,12.0)
         
         >>> midpoint(0,0,0,0)
-        0.0,0.0
+        (0.0,0.0)
         
         >>> midpoint(-3,-42,-9,23)
-        -22.5,7.0
+        (-22.5,7.0)
         >>> midpoint(2,10,-2,5)
-        6.0,1.5
+        (6.0,1.5)
         >>> midpoint(5,2,-10,24)
-        3.5,7.0
+        (3.5,7.0)
         
     '''
     a = (x1 + x2)/2
     b = (y1 + y2)/2
-    print(f'{a},{b}')
+    print(f'({a},{b})')
 
 def midpointz():
     y1 = int(input('Input Y1: '))
@@ -103,21 +103,21 @@ def sphere(r):
     '''
         gives the volume and surface area of a sphere
     >>> sphere(2)
-    33.51
-    50.27
+    Volume = 33.51
+    Surface Area = 50.27
     >>> sphere(3)
-    113.1
-    113.1
+    Volume = 113.1
+    Surface Area = 113.1
     >>> sphere(0)
-    0.0
-    0.0
+    Volume = 0.0
+    Surface Area = 0.0
     
     >>> sphere(4)
-    268.08
-    201.06
+    Volume = 268.08
+    Surface Area = 201.06
     >>> sphere(5)
-    523.6
-    314.16
+    Volume = 523.6
+    Surface Area = 314.16
     
     '''
     a = 4/3*pi
@@ -126,8 +126,8 @@ def sphere(r):
     
     sa = 4*pi*r**2
     sa = round(sa,2)
-    print(v)
-    print(sa)
+    print(f"Volume = {v}")
+    print(f"Surface Area = {sa}")
     
     
 def spherez():
@@ -135,27 +135,31 @@ def spherez():
     
     sphere(r)
     
-def quadratic(a,b,c):
+def volume(a,b,c):
     '''
         It returns two values involving the quadtratic equation
         
-        >>> quadratic(4,11,-20)
-        -4.0
-        1.25
+        >>> volume(4,11,1)
+        Volume = 44
         
-        >>> quadratic(4,8,-1)
+        >>> volume(4,8,-1)
+        Distance can not be negative or zero
+        
+        
+        >>> volume(8,-2,10)
         0.0
         0.0
     '''
-    d = sqrt(b**2-4*a*c)
-    e = 2*a
-    f = -1 * b
-    x1 = (f - d)/e
-    x2 = (f + d)/e
-    x1 = round(x1,2)
-    x2 = round(x2,2)
-    print(x1)
-    print(x2)
+    v = a*b*c
+    if a <= 0 or b <= 0 or c <= 0:
+        print('Distance can not be negative or zero')
+    elif a > 0 or b > 0 or c > 0:
+        print(f'Volume = {v}')
+    
+def volumez():
+    a = int(input('Please put a'))
+    b = int(input('Please put b'))
+    c = int(input('Please put c'))
 def main():
     while True:
         print(' ')
@@ -175,6 +179,8 @@ def main():
             midpointz()
         elif a == '4':
             spherez()
+        elif a == '5':
+            volumez()
         elif a == '0':
             print('Ok thank you goodbye')
             break
@@ -182,8 +188,8 @@ def main():
             print('That is not a formula option')
             print(' ')
             print(' ')
-    pass 
-
+    
+    pass
     
           
     
