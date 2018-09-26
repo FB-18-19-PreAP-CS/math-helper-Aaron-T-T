@@ -146,9 +146,14 @@ def volume(a,b,c):
         Distance can not be negative or zero
         
         
-        >>> volume(8,-2,10)
-        0.0
-        0.0
+        >>> volume(8,-2,0)
+        Distance can not be negative or zero
+        
+        >>> volume(4,4,4)
+        
+        
+        
+        
     '''
     v = a*b*c
     if a <= 0 or b <= 0 or c <= 0:
@@ -189,7 +194,7 @@ def main():
             print(' ')
             print(' ')
     
-    pass
+    
     
           
     
@@ -199,9 +204,9 @@ def main():
 
 
 if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
-    #main()
+    #import doctest
+    #doctest.testmod()
+    main()
     
     
     
