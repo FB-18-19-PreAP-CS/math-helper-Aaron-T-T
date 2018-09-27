@@ -120,6 +120,8 @@ def sphere(r):
     Surface Area = 314.16
     
     '''
+    if r < 0:
+        raise ValueError('r cannot be negative')
     a = 4/3*pi
     v = a*(r**3)
     v = round(v,2)
@@ -175,24 +177,31 @@ def main():
         print('Midpoint formula: 3')
         print('Sphere   formula: 4')
         print('Quit: 0')
-        a = str(input('pick which formula you want to use: '))
-        if a == '1':
-            slopez()
-        elif a == '2':
-            distancez()
-        elif a == '3':
-            midpointz()
-        elif a == '4':
-            spherez()
-        elif a == '5':
-            volumez()
-        elif a == '0':
-            print('Ok thank you goodbye')
-            break
-        else:
-            print('That is not a formula option')
-            print(' ')
-            print(' ')
+        while True:
+            try:
+                a = str(input('pick which formula you want to use: '))
+                if a == '1':
+                    slopez()
+                elif a == '2':
+                    distancez()
+                elif a == '3':
+                    midpointz()
+                elif a == '4':
+                    spherez()
+                elif a == '5':
+                    volumez()
+                elif a == '0':
+                    print('Ok thank you goodbye')
+                    break
+                else:
+                    print('That is not a formula option')
+                    print(' ')
+                    print(' ')
+            except Exception as e:
+                print()
+                print('Invalid Input: ' + str(e))
+            
+                main() 
     
     
     
