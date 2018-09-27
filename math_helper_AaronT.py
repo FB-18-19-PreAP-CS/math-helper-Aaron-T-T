@@ -1,9 +1,6 @@
 from math import *
 
-# You might want to consider having your functions
-# return values (instead of printing) to make it
-# easier for your user interface to display
-# the answers in a useful way
+
 
 def slope(y1,y2,x1,x2):
     ''' Gets the inputs for the y1,y2,x1,and x2
@@ -28,10 +25,10 @@ def slope(y1,y2,x1,x2):
         b = b * -1
     print(f'{a}/{b}') 
 def slopez():
-    y1 = int(input('Input Y1: '))
-    y2 = int(input('Input Y2: '))
-    x1 = int(input('Input X1: '))
-    x2 = int(input('Input X2: '))
+    y1 = float(input('Input Y1: '))
+    y2 = float(input('Input Y2: '))
+    x1 = float(input('Input X1: '))
+    x2 = float(input('Input X2: '))
     slope(y1,y2,x1,x2)
     
 
@@ -60,10 +57,10 @@ def distance(x1,x2,y1,y2):
     
     
 def distancez():
-    y1 = int(input('Input Y1: '))
-    y2 = int(input('Input Y2: '))
-    x1 = int(input('Input X1: '))
-    x2 = int(input('Input X2: '))
+    y1 = float(input('Input Y1: '))
+    y2 = float(input('Input Y2: '))
+    x1 = float(input('Input X1: '))
+    x2 = float(input('Input X2: '))
     distance(x1,x2,y1,y2)
     
     
@@ -93,10 +90,10 @@ def midpoint(x1,x2,y1,y2):
     print(f'({a},{b})')
 
 def midpointz():
-    y1 = int(input('Input Y1: '))
-    y2 = int(input('Input Y2: '))
-    x1 = int(input('Input X1: '))
-    x2 = int(input('Input X2: '))
+    y1 = float(input('Input Y1: '))
+    y2 = float(input('Input Y2: '))
+    x1 = float(input('Input X1: '))
+    x2 = float(input('Input X2: '))
     midpoint(x1,x2,y1,y2)
     
 def sphere(r):
@@ -122,6 +119,7 @@ def sphere(r):
     '''
     if r < 0:
         raise ValueError('r cannot be negative')
+    
     a = 4/3*pi
     v = a*(r**3)
     v = round(v,2)
@@ -133,7 +131,7 @@ def sphere(r):
     
     
 def spherez():
-    r = int(input('Input radius: '))
+    r = float(input('Input radius: '))
     
     sphere(r)
     
@@ -152,6 +150,13 @@ def volume(a,b,c):
         Distance can not be negative or zero
         
         >>> volume(4,4,4)
+        Volume = 64
+        
+        >>> volume(6,2,8)
+        Volume = 96
+        
+        
+        
         
         
         
@@ -164,9 +169,10 @@ def volume(a,b,c):
         print(f'Volume = {v}')
     
 def volumez():
-    a = int(input('Please put a'))
-    b = int(input('Please put b'))
-    c = int(input('Please put c'))
+    a = float(input('Please put a: '))
+    b = float(input('Please put b: '))
+    c = float(input('Please put c: '))
+    volume(a,b,c)
 def main():
     while True:
         print(' ')
@@ -176,6 +182,7 @@ def main():
         print('Distance formula: 2')
         print('Midpoint formula: 3')
         print('Sphere   formula: 4')
+        print('Volume   formula: 5')
         print('Quit: 0')
         while True:
             try:
@@ -213,8 +220,8 @@ def main():
 
 
 if __name__ == "__main__":
-    #import doctest
-    #doctest.testmod()
+    import doctest
+    doctest.testmod()
     main()
     
     
